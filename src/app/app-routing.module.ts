@@ -4,13 +4,27 @@ import { ValueComponent } from './value/value.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MemberListComponent } from './member-list/member-list.component';
+import { MessagesComponent } from './messages/messages.component';
+import { ListsComponent } from './lists/lists.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'value', component: ValueComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: '**', component: PageNotFoundComponent }
+  {
+    path: '',
+    runGuardsAndResolvers: 'always',
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'members', component: MemberListComponent },
+      { path: 'messages', component: MessagesComponent },
+      { path: 'lists', component: ListsComponent },
+    ]
+  },
+  { path: 'value', component: ValueComponent },
+  // { path: 'register', component: RegisterComponent },
+   { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

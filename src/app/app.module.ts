@@ -16,6 +16,10 @@ import { RegisterComponent } from './register/register.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AlertifyService } from './_services/alertify.service';
+import { MessagesComponent } from './messages/messages.component';
+import { ListsComponent } from './lists/lists.component';
+import { MemberListComponent } from './member-list/member-list.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { AlertifyService } from './_services/alertify.service';
     NavComponent,
     HomeComponent,
     RegisterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MessagesComponent,
+    ListsComponent,
+    MemberListComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,8 @@ import { AlertifyService } from './_services/alertify.service';
   providers: [
     AuthService,
     ErrorInterceptorProvider,
-    AlertifyService
+    AlertifyService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
