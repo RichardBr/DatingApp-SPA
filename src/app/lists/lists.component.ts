@@ -26,7 +26,6 @@ export class ListsComponent implements OnInit {
       this.users = data['usersResolver'].result;
       this.pagination = data['usersResolver'].pagination;
     });
-    // if ()
 
     this.likesParam = 'Likers';
   }
@@ -44,6 +43,6 @@ export class ListsComponent implements OnInit {
 
     pageChanged(event: any): void {
       this.pagination.currentPage = event.page;
-      // this.loadUsers();
+      this.loadUsers();
     }
 }
