@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule, ButtonsModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule, ButtonsModule, ModalModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [],
@@ -10,14 +10,16 @@ import { BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule, But
     TabsModule.forRoot(),
     BsDatepickerModule.forRoot(),
     PaginationModule.forRoot(),
-    ButtonsModule.forRoot()
+    ButtonsModule.forRoot(),
+    ModalModule.forRoot()
   ],
   exports: [
     BsDropdownModule,
     TabsModule,
     BsDatepickerModule,
     PaginationModule,
-    ButtonsModule
+    ButtonsModule,
+    ModalModule
   ]
 })
 export class NgxBootstrapModule { }
